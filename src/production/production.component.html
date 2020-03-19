@@ -1,0 +1,24 @@
+<h1>production component</h1>
+<h2>{{item.value}}</h2>
+<p> {{item.components}}</p>
+<div *ngIf="item.components">
+    Components needed:
+    <div *ngFor='let component of item.components'>
+         ------------<img src={{GetItemByName(component).img}}>{{component}}
+        <div *ngIf="GetItemByName(component).components">
+            <div *ngFor='let component2 of GetItemByName(component).components'>
+                --------------------<img src={{GetItemByName(component2).img}}>{{component2}}
+                <div *ngIf="GetItemByName(component2).components">
+                    <div *ngFor='let component3 of GetItemByName(component2).components'>
+                        ------------------------------<img src={{GetItemByName(component3).img}}>{{component3}}
+                        <div *ngIf="GetItemByName(component3).components">
+                            <div *ngFor='let component4 of GetItemByName(component3).components'>
+                                ----------------------------------------<img src={{GetItemByName(component4).img}}>{{component4}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
+import { IItem } from './item';
+import { ItemsService } from './items.service';
 
-export interface Item {
-  value: string;
-  viewValue: string;
-  img: string;
-}
+
 
 @Component({
   selector: 'app-root',
@@ -13,10 +11,11 @@ export interface Item {
 })
 export class AppComponent {
   title = 'test';
-  selectedItem: Item= { value: "", viewValue: "", img: "" };
-  items: Item[] = [
-    { value: 'Computer', viewValue: 'Pizza', img: 'assets/images/computer.png' },
-    { value: 'Plastic', viewValue: 'Steak', img: 'assets/images/plastic.png' },
-    { value: 'tacos-2', viewValue: 'Tacos', img: 'https://www.akberiqbal.com/favicon-16x16.png' }
-  ];
+  selectedItem: IItem = {value:'',img:'', components: null}
+  items: IItem[];
+
+  constructor(private itemsService: ItemsService){
+    this.items = itemsService.getItems()
+  }
 }
+

@@ -1,0 +1,7 @@
+<div *ngFor='let component of item.components'>
+    <ul>
+        <img src='{{GetItemByName(component.name).img}}'> {{component.inputPerMinute}}
+        <sf-production2 *ngIf='GetItemByName(component.name).components' [item]='GetItemByName(component.name)' [items]="items" [amountNeeded]='component.inputPerMinute'></sf-production2>
+    </ul>
+</div>
+

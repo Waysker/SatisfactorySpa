@@ -11,7 +11,7 @@ import { ItemsService } from './items.service';
 })
 export class AppComponent {
   title = 'test';
-  selectedItem: IItem = {value:'',img:'', components: null}
+  selectedItem: IItem = {name:'',img:'', components: null,outputPerMin: null}
   items: IItem[];
 
   constructor(private itemsService: ItemsService){

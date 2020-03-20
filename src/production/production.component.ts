@@ -12,6 +12,6 @@ export class ProductionComponent{
 @Input() items: IItem[]
 
 GetItemByName(name: string){
-    return this.items.find(x=>x.value === name);
+    return this.items.find(x=>x.name === name);
 }
 }

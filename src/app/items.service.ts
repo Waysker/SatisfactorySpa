@@ -9,86 +9,97 @@ export class ItemsService{
 
     getItems(): IItem[]{
         return [{
-                value: 'Computer',
+                name: 'Computer',
                 img: 'assets/images/computer.png',
+                outputPerMin: 2.5,
                 components: [
-                    'Circuit Board',
-                    'Cable',
-                    'Plastic',
-                    'Screw',
+                    {name:'Circuit Board', inputPerMinute: 25},
+                    {name:'Cable', inputPerMinute: 22.5},
+                    {name:'Plastic', inputPerMinute: 45},
+                    {name:'Screw', inputPerMinute: 130}
                 ]
             },
             {
-                value: 'Plastic',
+                name: 'Plastic',
                 img: 'assets/images/plastic.png',
+                outputPerMin: 20,
                 components: [
-                    'Crude Oil'
+                    {name: 'Crude Oil', inputPerMinute: 30} 
                 ]
             },
             {
-                value: 'Cable',
+                name: 'Cable',
                 img: 'assets/images/cable.png',
+                outputPerMin: 30,
                 components: [
-                    'Wire'
+                    {name:'Wire', inputPerMinute: 60}
                 ]
             },
             {
-                value: 'Circuit Board',
+                name: 'Circuit Board',
                 img: 'assets/images/circuit_board.png',
+                outputPerMin: 10,
                 components: [
-                    'Wire',
-                    'Plastic'
+                    {name:'Wire', inputPerMinute: 60},
+                    {name:'Plastic', inputPerMinute: 30}
                 ]
             },
             {
-                value: 'Screw',
+                name: 'Screw',
                 img: 'assets/images/screw.png',
+                outputPerMin: 40,
                 components: [
-                    'Wire',
-                    'Iron Rod'
+                    {name:'Iron Rod', inputPerMinute: 10}
                 ]
             },
             {
-                value: 'Iron Rod',
+                name: 'Iron Rod',
                 img: 'assets/images/iron_rod.png',
+                outputPerMin: 15,
                 components: [
-                    'Iron Ingot'
+                    {name:'Iron Ingot', inputPerMinute: 15}
                 ]
             },
             {
-                value: 'Wire',
+                name: 'Wire',
                 img: 'assets/images/wire.png',
+                outputPerMin: 30,
                 components: [
-                    'Copper Ingot'
+                    {name:'Copper Ingot', inputPerMinute: 15}
                 ]
             },
             {
-                value: 'Iron Ingot',
+                name: 'Iron Ingot',
                 img: 'assets/images/iron_ingot.png',
+                outputPerMin: 30,
                 components: [
-                    'Iron Ore'
+                    {name:'Iron Ore', inputPerMinute: 30}
                 ]
             },
             {
-                value: 'Copper Ingot',
+                name: 'Copper Ingot',
                 img: 'assets/images/copper_ingot.png',
+                outputPerMin: 30,
                 components: [
-                    'Copper Ore'
+                    {name:'Copper Ore', inputPerMinute: 30}
                 ]
             },
             {
-                value: 'Crude Oil',
+                name: 'Crude Oil',
                 img: 'assets/images/crude_oil.png',
+                outputPerMin: 120,
                 components: null
             },
             {
-                value: 'Iron Ore',
+                name: 'Iron Ore',
                 img: 'assets/images/iron_ore.png',
+                outputPerMin: 60,
                 components: null
             },
             {
-                value: 'Copper Ore',
+                name: 'Copper Ore',
                 img: 'assets/images/copper_ore.png',
+                outputPerMin: 60,
                 components: null
             }
             

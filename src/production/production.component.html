@@ -1,19 +1,18 @@
 <h1>production component</h1>
-<h2>{{item.value}}</h2>
-<p> {{item.components}}</p>
+<h2>{{item.name}}</h2>
 <div *ngIf="item.components">
     Components needed:
     <div *ngFor='let component of item.components'>
-         ------------<img src={{GetItemByName(component).img}}>{{component}}
-        <div *ngIf="GetItemByName(component).components">
-            <div *ngFor='let component2 of GetItemByName(component).components'>
-                --------------------<img src={{GetItemByName(component2).img}}>{{component2}}
-                <div *ngIf="GetItemByName(component2).components">
-                    <div *ngFor='let component3 of GetItemByName(component2).components'>
-                        ------------------------------<img src={{GetItemByName(component3).img}}>{{component3}}
-                        <div *ngIf="GetItemByName(component3).components">
-                            <div *ngFor='let component4 of GetItemByName(component3).components'>
-                                ----------------------------------------<img src={{GetItemByName(component4).img}}>{{component4}}
+         ------------<img src={{GetItemByName(component.name).img}}>{{component.name}} {{component.inputPerMinute}}/min
+        <div *ngIf="GetItemByName(component.name).components">
+            <div *ngFor='let component2 of GetItemByName(component.name).components'>
+                --------------------<img src={{GetItemByName(component2.name).img}}>{{component2.name}} 
+                <div *ngIf="GetItemByName(component2.name).components">
+                    <div *ngFor='let component3 of GetItemByName(component2.name).components'>
+                        ------------------------------<img src={{GetItemByName(component3.name).img}}>{{component3.name}}
+                        <div *ngIf="GetItemByName(component3.name).components">
+                            <div *ngFor='let component4 of GetItemByName(component3.name).components'>
+                                ----------------------------------------<img src={{GetItemByName(component4.name).img}}>{{component4.name}}
                             </div>
                         </div>
                     </div>

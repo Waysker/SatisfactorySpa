@@ -1,5 +1,11 @@
 export interface IItem{
-    value: string;
+    name: string;
     img: string;
-    components: any[];
+    components: IComponent[];
+    outputPerMin: number;
+}
+
+export interface IComponent{
+    name: string;
+    inputPerMinute: number;
 }

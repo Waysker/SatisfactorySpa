@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ProductionComponent } from 'src/production/production.component';
 import {ProductionComponent2} from 'src/production/production.component2';
+import {MatInputModule} from '@angular/material/input'; 
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import {ProductionComponent2} from 'src/production/production.component2';
     MatSelectModule,
     MatSliderModule,
     MatGridListModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

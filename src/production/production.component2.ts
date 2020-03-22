@@ -1,5 +1,7 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { IItem, IComponent } from 'src/app/item';
+import { notEqual } from 'assert';
+import { ItemsService } from 'src/app/items.service';
 
 @Component({
     selector:'sf-production2',
@@ -8,18 +10,23 @@ import { IItem, IComponent } from 'src/app/item';
 })
 
 export class ProductionComponent2 implements OnChanges{
-@Input() item: IItem
-@Input() items: IItem[]
+@Input() selectedItem: IItem
+items: IItem[]
 @Input() amountNeeded: number;
-inputs: IComponent[];
+
+
+constructor(private itemService: ItemsService){
+    this.items=itemService.getItems();
+    //check if this copies reference or creates new object ^
+}
 
 GetItemByName(name: string){
     return this.items.find(x=>x.name === name);
 }
 
+CalculateInput(inputPerMinute:number,outputPerMinute:number) :number {
+    return inputPerMinute * (this.amountNeeded/outputPerMinute)
+}
 ngOnChanges(){
-    this.item.components.forEach(element => {
-        element.inputPerMinute = element.inputPerMinute * (this.amountNeeded/this.item.outputPerMin)
-    });
 }
 }

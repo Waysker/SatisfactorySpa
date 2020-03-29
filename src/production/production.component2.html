@@ -1,7 +1,11 @@
-<div *ngFor='let component of selectedItem.components'>
-    <ul>
-        <img src='{{GetItemByName(component.name).img}}'> {{CalculateInput(component.inputPerMinute,selectedItem.outputPerMin)}}
-        <sf-production2 *ngIf='GetItemByName(component.name).components' [selectedItem]='GetItemByName(component.name)' [amountNeeded]='CalculateInput(component.inputPerMinute,selectedItem.outputPerMin)'></sf-production2>
-    </ul>
+<div *ngIf="selectedItem">
+    <div *ngFor='let component of selectedItem.components'>
+        <ul>
+            <img src='{{GetItemByName(component.name).img}}'> 
+            {{CalculateInput(component.inputPerMinute,selectedItem.outputPerMin) | number:'1.0-2'}}/min 
+            ({{CalculateMachines(selectedItem.outputPerMin) | number:'1.0-2'}} x {{GetItemByName(component.name).type}})
+            <sf-production2 *ngIf='GetItemByName(component.name).components' [selectedItem]='GetItemByName(component.name)' [amountNeeded]='CalculateInput(component.inputPerMinute,selectedItem.outputPerMin)'></sf-production2>
+        </ul>
+    </div>
 </div>
 

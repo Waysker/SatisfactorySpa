@@ -27,6 +27,10 @@ GetItemByName(name: string){
 CalculateInput(inputPerMinute:number,outputPerMinute:number) :number {
     return inputPerMinute * (this.amountNeeded/outputPerMinute)
 }
+CalculateMachines(outputPerMinute: number) : number{
+    return this.amountNeeded/outputPerMinute
+}
+
 ngOnChanges(){
 }
 }

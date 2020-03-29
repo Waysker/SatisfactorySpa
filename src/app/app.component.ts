@@ -10,11 +10,12 @@ import { ItemsService } from './items.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'SatisfactorySpa';
-  selectedItem: IItem = {name:'',img:'', components: null,outputPerMin: null};
-  items: IItem[];
-  amountNeeded: number= 1;
-
+  title = 'SatisfactorySpa'
+  selectedItem: IItem 
+  items: IItem[]
+  amountNeeded: number = 1
+  selectedRecipe: string[] = ['default']
+  selectedRecipes: string[] 
   constructor(private itemsService: ItemsService){
     this.items = itemsService.getItems()
   }
